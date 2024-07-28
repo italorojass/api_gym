@@ -1,0 +1,417 @@
+
+[data-theme-version="dark"] {
+    .dropdown-menu {
+        background-color: $d-bg;
+		box-shadow: 0px 0px 0px 1px rgba(255, 255, 255,0.1);
+		
+		.dropdown-item {
+			&.selected,
+			&.selected.active,
+			&.active,
+			&:hover, 
+			&:focus {
+				background-color: $dark-card;
+				color: $body-color;
+			}
+		}
+    }
+
+    .form-control {
+        background-color: $dark-card!important;
+        border-color: $d-border;
+        color: $white;
+    }
+	.search-area{
+		.form-control{
+			 background-color: $d-bg!important;
+		}
+		.input-group-text{
+			background-color:$d-bg;
+		}
+		i{
+			color:$white;
+		}
+	}
+	#chartBar,
+	#chartTimeline,
+	#chartBar2,
+	#chartBar3,
+	#chartBarCycle,
+	#chartBarRunning{
+		line{
+			stroke:$d-border;
+		}
+	}
+    
+    .card {
+        background-color: $dark-card;
+		box-shadow:none;
+    }
+	.btn-outline-dark:hover{
+		background-color: $d-bg;
+		border-color: $d-bg;
+	}
+	.tdl-holder input[type=text],
+	.tdl-holder li{
+	    background-color: $dark-card;
+		border-color:$d-border;
+	}
+	.tdl-holder input[type=text]{
+		&::placeholder {
+			color: $d-ctl;
+		}
+	}
+    .tdl-holder label:hover {
+		background-color: $d-border;
+		color: $white;
+	}
+	.text-muted {
+		color: $d-ctl !important;
+	}
+	.modal-content{
+		background:$dark-card;
+	}
+	.modal-footer,
+	.modal-header{
+		border-color: $d-border;
+	}
+	.close{
+	    font-weight: 400;
+		color: $white;
+		text-shadow: none;
+		
+		&:hover{
+			color: $white;
+		}
+	}
+	.table strong {
+		color: #fff;
+	}
+	.text-dark {
+		color: $d-ctl !important;
+	}
+	.star-rating .product-review,
+	.new-arrival-content .item{
+		color: $white;
+	}
+	.custom-dropdown .dropdown-menu{
+		border-color: $d-border;
+	}
+	.widget-stat .media > span{
+	    background: $d-border;
+	    border-color: $d-border;
+		color:$white;
+	}
+	.plus-minus-input .custom-btn{
+		background: $d-bg;
+	    border-color: $d-border;
+	}
+	.dropdown-divider,
+	.size-filter ul li{
+		border-color: $d-border;
+	}
+	.custom-select{
+	    border-color: $d-border;
+		color: $d-ctl;
+		background:$d-bg;
+	}
+	.nav-tabs{
+		border-color: $d-border;
+	}
+	.mail-list .list-group-item.active i {
+		color: $white;
+	}
+	hr{
+		border-color: $d-border;
+	}
+	
+	.grid-col{
+		background:$d-bg;
+	}
+	
+	.noUi-target{
+		border-color:$d-border;
+		border-radius: 8px;
+		box-shadow: none;
+		
+		.noUi-connects{
+			background:$d-border;
+		}
+	}
+	.noUi-marker-large,
+	.noUi-marker{
+		background:$d-border;
+	}
+	.input-group-text{
+		background:$d-bg;
+		color:$body-color;
+	}
+	.border-end{
+		border-color:$d-border!important;
+	}
+	.note-editor.note-frame{
+		border-color:$d-border;
+		.btn{
+			color:$white;
+		}
+		.note-editing-area .note-editable{
+			color:$white;
+		}
+	}
+	.widget-media .timeline .timeline-panel{
+		border-color:$d-border; 
+	}
+	.notification_dropdown .dropdown-menu-right .all-notification{
+		border-color:$d-border; 
+	}
+	#user-activity .nav-tabs .nav-link{
+		border-color:$d-border; 
+	}
+	.list-group-item-action{
+		color:$body-color;
+	}
+	.list-group-item-action:focus, 
+	.list-group-item-action:hover, 
+	.list-group-item-action:focus{
+		background-color:$d-bg; 
+		border-color:$d-bg; 
+	}
+	.list-group-item.active{
+		color:$white;
+		border-color:$primary;
+		&:focus, 
+		&:hover, 
+		&:focus{
+			background-color:$primary; 
+			border-color:$primary; 
+			color:$white;
+		}
+	}
+	.swal2-popup{
+		background:$dark-card;
+	}
+	.dashboard_bar{
+		color:$white;
+	}
+	.avtivity-card{
+		.text-black{
+			color:$white!important;
+		}
+	}
+	.text-black{
+		color:$white!important;
+	}
+	.card-footer.style-1 a{
+		background-color:$d-bg;
+		color:$white!important;
+	}
+	#SvgjsText1300{
+		fill:$white;
+	}
+	.card-action.card-tabs .nav-tabs{
+		background-color:$d-bg;
+		color:$white;
+		.nav-link{
+			color:$white;
+			&.active{
+				background-color:$dark-card;
+				color:$white;
+			}
+		}
+	}
+	.card-tabs.style-1 .nav-tabs{
+		background-color:$dark-card;
+	}
+	.plan-list .list-row .play-button,
+	.plan-list .list-row .more-button{
+		background-color:$d-bg;
+	}
+	.event-calender .bootstrap-datetimepicker-widget table td.day{
+		color:$white;
+	}
+	.event-calender .datepicker table tr td.active.active{
+		background-color:$d-bg!important;
+	}
+	.event-calender .bootstrap-datetimepicker-widget table th.picker-switch{
+		color:$white;
+	}
+	.bg-light{
+		.text-black{
+			color:$black!important;
+		}
+	}
+	.bg-white{
+		background-color:$dark-card!important;
+	}
+	table.dataTable tbody td{
+		background-color:$dark-card!important;
+		color:$white;
+	}
+	.dataTables_wrapper .dataTables_paginate .paginate_button.previous, .dataTables_wrapper .dataTables_paginate .paginate_button.next{
+		background-color:$d-bg!important;
+		color:$white!important;
+	}
+	.btn-link g [fill] {
+		fill:$white;
+	}
+	.page-titles{
+		background-color:$d-bg;
+	}
+	.table thead th{
+		color:$white;
+		border-color:$d-border;
+	}
+	.fc-theme-standard td, .fc-theme-standard th,
+	.fc-theme-standard .fc-scrollgrid.fc-scrollgrid-liquid,
+	.fc-scrollgrid, table,
+	.fc .fc-button-group > .fc-button,
+	.form-check-input[type="checkbox"],
+	.form-check-input[type="radio"]{
+		border-color:$d-border!important;
+	}	
+	table.dataTable thead th,{
+		border-color:$d-border;
+	}
+	.daterangepicker{
+		background:$d-bg;
+		border-color:$primary;
+		.calendar-table{
+			border-color:$primary;
+			background:$d-bg;
+			.table-condensed{
+				td{
+					&:hover{
+						background-color:$primary;
+						color:$white;
+					}
+				}
+			}
+		}
+        &:after{
+            border-bottom: 6px solid $d-bg;
+        }
+	}
+    
+    .daterangepicker select.hourselect
+    , .daterangepicker select.minuteselect
+    , .daterangepicker select.secondselect
+    , .daterangepicker select.ampmselect{
+            background: $d-bg;
+            border: 1px solid $d-border;
+            color:$white;
+    }
+    
+	.daterangepicker td.off, 
+	.daterangepicker td.off.in-range,
+	.daterangepicker td.off.start-date, 
+	.daterangepicker td.off.end-date{
+		background-color:transparent;
+		&:hover{
+			background-color:$primary;
+			color:$white;			
+		}
+	}
+	button.cancelBtn.btn.btn-sm.btn-inverse{
+		background-color:$dark-card;	
+	}
+	.clockpicker-plate{
+		background-color:$d-bg;
+		border-color:$d-border;	
+	}
+	.dtp > .dtp-content{
+		background-color:$d-bg;
+	}
+	.dtp table.dtp-picker-days tr > td > a, .dtp .dtp-picker-time > a{
+		color:$body-color;
+	}
+	.daterangepicker .drp-buttons,.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred{
+		border-color:$d-border;
+	}
+	.clockpicker-popover .popover-content{
+		background-color:$dark-card;
+	}
+	.popover-title{
+		background-color:$d-bg;
+	}
+	.note-editor.note-frame .note-statusbar,.form-wizard .nav-wizard li .nav-link span,.svg-icons-ov.style-1 .svg-icons-prev,.svg-icons-ov .svg-icon-popup .btn{
+		background-color:$d-bg;
+	}
+	.dd-handle{
+		border-color:$d-border;
+	}
+	.btn-close{
+		background:transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath fill='white' d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+	}
+	.svg-area .card-header,.new-arrival-content h4 a, .new-arrival-content .h4 a{
+		color:$white;
+	}
+	.svg-icons-ov,
+	.cm-content-box .cm-content-body,
+	.menu-tabs,.cm-content-box.style-1 .content-title,
+	.dd .accordion-body,
+	.dz-terms,.compose-content .dropzone{
+		border-color:$d-border;
+	}
+	.new-scroll,.compose-content .dropzone{
+		background-color:$d-bg!important;
+	}
+	
+	/* cms-dark */
+	
+	.cm-content-box,.dd-handle.move-media + .accordion-button{
+		background-color:$dark-card;
+	}
+	.btn-icon-right{
+		border-color:$d-border;
+	}
+	.accordion-danger-solid .accordion-button{
+		border-color:#F94687;
+	}
+	
+	.deznav .metismenu > li.mm-active > a{
+		background-color:#27282D!important;
+	}
+	.testimonial-one .owl-nav .owl-prev, .testimonial-one .owl-nav .owl-next{
+		background-color:$d-bg!important;
+	}
+	.datepicker.datepicker-dropdown{
+		border-color:$d-border;
+	}
+	.event-calender .bootstrap-datetimepicker-widget table th{
+		color:$white;
+	}
+	.nav-tabs.diet-tabs .nav-link{
+		background-color:$d-bg;
+		color:$white;
+		&.active{
+			background-color:$primary;
+		}
+	}
+	.brand-title{
+		filter:brightness(35.9);
+	}
+	.tab-icon{
+		.nav-link{
+			&.active{
+				border-color:$d-border;
+				i{
+					color:$white;
+				}
+			}
+			&:hover{
+				border-color:$d-border;
+			}
+		}
+	}
+	.notification_dropdown .dropdown-menu-end .all-notification, .header-profile .dropdown-menu-end .all-notification{
+		border-color:$d-border;
+	}
+	svg text{
+		fill:$white;
+		
+	}
+	
+	 
+	
+	
+}

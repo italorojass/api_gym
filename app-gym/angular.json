@@ -25,21 +25,30 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/vendor/chartist/css/chartist.min.css",
+              "src/assets/vendor/bootstrap-select/css/bootstrap-select.min.css",
+              "src/assets/css/style.css",
+              "src/assets/vendor/owl-carousel/owl.carousel.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/vendor/global/global.min.js",
+              "src/assets/vendor/bootstrap-select/js/bootstrap-select.min.js",
+              "src/assets/js/custom.min.js",
+              "src/assets/js/deznav-init.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "10mb",
                   "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
+                  "maximumWarning": "5mb",
                   "maximumError": "4kb"
                 }
               ],

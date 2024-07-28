@@ -1,0 +1,225 @@
+/////////////////
+// Header
+/////////////////
+.header {
+    height: 7.5rem;
+    z-index: 1;
+    position: relative;
+    padding: 0rem;
+    background-color: $white;
+    z-index: 4;
+    padding-left: 21.563rem;
+    transition: all .2s ease;
+	@include respond('laptop'){
+		padding-left: 17rem;
+	}
+    
+    .header-content {
+        height: 100%;
+        padding-left: 5.3125rem;
+        padding-right: 2.4rem;
+        align-items: center;
+        display: flex;
+        @include custommq($max: 767px) {
+            padding-left: 3.75rem;
+			padding-right: 0.938rem;
+			border-radius: 0;
+        }
+		@include respond ('phone'){
+			padding-left:2.75rem;
+		}
+		
+    }
+    .navbar {
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        .navbar-collapse {
+            height: 100%;
+            width: 100%;
+        }
+    }
+	@include respond('tab-land'){
+		height:5rem;
+	}
+}
+
+////////////////////////
+// CSS Pulse Effect
+////////////////////////
+@mixin circle($circleSize) {
+    width: $circleSize;
+    height: $circleSize;
+    border-radius: calc($circleSize/2);
+}
+
+
+/* pulse in SVG */
+
+svg.pulse-svg {
+    overflow: visible;
+    .first-circle {
+        -webkit-transform: scale(0.3);
+        transform: scale(0.3);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation: pulse-me 3s linear infinite;
+        animation: pulse-me 3s linear infinite;
+        fill: $primary;
+    }
+    .second-circle {
+        @extend .first-circle;
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+    }
+    .third-circle {
+        @extend .first-circle;
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+    }
+}
+
+
+/* pulse in CSS */
+
+.pulse-css {
+    @include circle(1rem);
+    border-radius: 3.5rem;
+    height: 13px;
+    position: absolute;
+    background:$warning;
+    right: -4px;
+    top: -3px;
+    width: 13px;
+    &:after,
+    &:before {
+        content: '';
+        @include circle(1rem);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: -.2rem;
+        background-color: $warning;
+        margin: auto;
+        -webkit-transform: scale(0.3);
+        transform: scale(0.3);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation: pulse-me 3s linear infinite;
+        animation: pulse-me 3s linear infinite;
+        @at-root [direction="rtl"] & {
+            left: auto;
+            right: -.2rem;
+        }
+    }
+}
+
+@-webkit-keyframes pulse-me {
+    0% {
+        -webkit-transform: scale(0.3);
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    70% {
+        opacity: 0.09;
+    }
+    100% {
+        -webkit-transform: scale(3);
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse-me {
+    0% {
+        -webkit-transform: scale(0.3);
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    70% {
+        opacity: 0.09;
+    }
+    100% {
+        -webkit-transform: scale(3);
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+[data-sidebar-style="full"],
+[data-sidebar-style="overlay"] {
+    .header {
+        width: 100%;
+        @include custommq($min: 1200px, $max: 1350px) {
+            width: 100%;
+            padding-left: 17rem;
+        }
+        @include respond('tab-land') {
+            width: 100%;
+            padding-left: 5rem;
+        }
+    }
+}
+
+[data-sidebar-style="mini"] {
+    .header {
+        width: 100%;
+        padding-left: 5rem;
+    }
+}
+
+[data-sidebar-style="compact"] {
+    .header {
+        width: 100%;
+        padding-left: 15rem;
+		.header-content{
+			padding-left: 2.4rem;
+		}
+    }
+}
+
+[data-header-position="fixed"] {
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    .content-body {
+        padding-top: 7.5rem;
+		@include respond('tab-land'){
+			padding-top: 5rem;
+		}
+    }
+    .deznav {
+        margin-top: 0;
+    }
+}
+[data-sidebar-style="compact"][data-header-position="fixed"][data-container="boxed"][data-layout="vertical"] {
+    .header {
+        width: 1199px;
+    }
+}
+[data-sidebar-style="modern"] {
+    .header {
+		width: 100%;
+		padding-left: 9.375rem;
+    
+
+    }
+	&[data-layout="horizontal"] {
+		.nav-header .brand-logo{
+		    justify-content: start;
+		}
+		.header .header-content{
+            padding-left: 30px;
+			
+        }
+	}
+}

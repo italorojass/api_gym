@@ -1,0 +1,87 @@
+.diet-search{
+	width:360px;
+	.input-group-append{
+		margin-left:-20px;
+		button{
+			border-top-left-radius: $radius!important;
+			border-bottom-left-radius: $radius!important;
+			font-size: 25px;
+			padding: 0 20px;
+			position: relative;
+			z-index: 3;
+		}
+	}
+	@include respond ('laptop'){
+		width:300px;
+		.input-group-append{
+			button{
+				font-size:18px;
+			}
+		}
+	}
+	@include respond ('phone'){
+		width:100%;
+	}
+}
+.menu-list{
+	@include respond ('tab-port'){
+		&>a>img{
+			float:left;
+		}
+	}
+	@include respond ('phone'){
+		&>a>img{
+			width:80px;
+		}
+	}
+}
+
+.plus-icon{
+	height: 50px;
+    width: 50px;
+    min-width: 50px;
+    display: inline-block;
+    line-height: 53px;
+    text-align: center;
+	border-radius:$radius;
+	background-color:$primary;
+	i{
+		font-size:18px;
+		color:$white;
+	}
+}
+.media{
+	.food-default-flex{
+		@include custommq($max:100rem){
+			flex:1;
+		}
+	}
+}
+.nav-tabs{
+	&.diet-tabs{
+		border:0;
+		.nav-link{
+			border: 0;
+			padding: 0.938rem 1.5rem;
+			background-color: $primary-light;
+			margin-right: 5px;
+			color:$black;
+			border-radius:$radius;
+			@include respond ('phone-land'){
+				margin-bottom:5px;
+			}
+			&.active{
+				background-color:$primary;
+				color:$white;
+				
+			}
+		}
+	}
+}
+.diet-content{
+	.card-body{
+		@include respond ('phone'){
+			padding:1rem 0;
+		}
+	}
+}
