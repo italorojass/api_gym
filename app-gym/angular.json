@@ -29,11 +29,16 @@
               "src/assets/vendor/bootstrap-select/css/bootstrap-select.min.css",
               "src/assets/css/style.css",
               "src/assets/vendor/owl-carousel/owl.carousel.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
             ],
             "scripts": [
               "src/assets/vendor/global/global.min.js",
               "src/assets/vendor/bootstrap-select/js/bootstrap-select.min.js",
+              "src/assets/vendor/chart-js/chart.bundle.min.js",
+              "src/assets/vendor/owl-carousel/owl.carousel.js",
+              "src/assets/vendor/peity/jquery.peity.min.js",
+              "src/assets/js/dashboard/dashboard-1.js",
               "src/assets/js/custom.min.js",
               "src/assets/js/deznav-init.js"
             ]

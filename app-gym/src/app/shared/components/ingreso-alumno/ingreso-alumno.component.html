@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-xl-12 col-xxl-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Ingresar nuevo alumno</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="formNuevoAlumno" (ngSubmit)="submit()">
+          <div  class="form-wizard order-create sw sw-theme-default sw-justified">
+
+          <div class="tab-content" style="height: 344px;">
+            <div id="wizard_Service" class="tab-pane" role="tabpanel" style="display: block;">
+              <div class="row">
+                <div class="col-lg-6 mb-2">
+                  <div class="form-group">
+                    <label class="text-label">Nombre<span class="required">*</span></label>
+                    <input type="text" name="firstName" class="form-control" placeholder="Parsley" required="" formControlName="nombre">
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                  <div class="form-group">
+                    <label class="text-label">Apellido<span class="required">*</span></label>
+                    <input type="text" name="lastName" class="form-control" placeholder="Montana" required="" formControlName="apellido">
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                  <div class="form-group">
+                    <label class="text-label">Email<span class="required">*</span></label>
+                    <input type="email" class="form-control" id="inputGroupPrepend2"
+                      aria-describedby="inputGroupPrepend2" placeholder="example@example.com.com" required="" formControlName="email">
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                  <div class="form-group">
+                    <label class="text-label">Numero de contacto<span class="required">*</span></label>
+                    <input type="number" name="phoneNumber" class="form-control" placeholder="(+1)408-657-9007" formControlName="telefono"
+                      required="">
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <div class="form-group">
+                    <label class="text-label">Disciplina<span class="required">*</span></label>
+                    <input type="text" name="place" class="form-control" required="" formControlName="disciplina">
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <div class="form-group">
+                    <label class="text-label">Horario<span class="required">*</span></label>
+                    <input type="text" name="place" class="form-control" required="" formControlName="plan">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="toolbar toolbar-bottom" role="toolbar" style="text-align: right;">
+
+            <button class="btn btn-success btn-block" type="submit" [disabled]="!formNuevoAlumno.valid">Inscribir</button>
+          </div>
+        </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

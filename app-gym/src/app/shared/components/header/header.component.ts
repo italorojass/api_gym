@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { MenuSidebarService } from '../../services/menu-sidebar.service';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+  constructor(private helper: MenuSidebarService) {
+
+  }
+  showmenu: boolean = false;
+
+  sendMenu() {
+    //  this.menuToggle.emit(this.showmenu);
+    this.helper.set(this.showmenu);
+  }
 
 }

@@ -1,0 +1,12 @@
+<div class="page-titles">
+  <ol class="breadcrumb">
+    <li *ngFor="let breadcrumb of breadcrumbs$ | async;let i=index"
+     class="breadcrumb-item active"  >
+
+      <a [routerLink]="breadcrumb.url" *ngIf="breadcrumb.label">{{ breadcrumb.label }}</a>
+    </li>
+
+  </ol>
+</div>
+
+

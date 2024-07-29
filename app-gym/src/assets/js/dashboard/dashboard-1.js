@@ -6,7 +6,7 @@
 	//let draw = Chart.controllers.line.__super__.draw; //draw shadow
 	var screenWidth = $(window).width();
 	var btnAware = function (){
-		
+
 		$('.avtivity-card')
 			.on('mouseenter', function(e) {
 					var parentOffset = $(this).offset(),
@@ -22,7 +22,7 @@
 		});
 	}
 	var chartTimeline = function(){
-		
+
 		var optionsTimeline = {
 			chart: {
 				type: "bar",
@@ -32,7 +32,7 @@
 					show: false
 				},
 				sparkline: {
-					
+
 				},
 				backgroundBarRadius: 5,
 				offsetX: -10,
@@ -45,9 +45,9 @@
 				{
 					name: "Retained Clients",
 					data: [-60, -10, -50, -25, -30, -65, -22, -10, -50, -20, -70, -35, -60, -20, -30, -45, -70, -50, -45, -10]
-				} 
+				}
 			],
-			
+
 			plotOptions: {
 				bar: {
 					columnWidth: "20%",
@@ -63,7 +63,7 @@
 				distributed: true
 			},
 			colors:['#0B2A97', '#FF9432'],
-			
+
 			grid: {
 				show: true,
 			},
@@ -92,12 +92,12 @@
 						fontSize: '13px',
 						fontFamily: 'Poppins',
 						fontWeight: 400
-						
+
 					},
 				},
 				axisTicks:{
 					show:false,
-					
+
 				},
 				crosshairs: {
 					show: false,
@@ -106,7 +106,7 @@
 					show: false,
 				},
 			},
-			
+
 			yaxis: {
 				labels: {
 					style: {
@@ -114,39 +114,39 @@
 						fontSize: '13px',
 						fontFamily: 'Poppins',
 						fontWeight: 400
-						
+
 					},
 				},
 			},
 			responsive: [{
 				breakpoint: 575,
-				
+
 				options: {
 					xaxis: {
 						categories: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11']
 					},
-					
+
 				},
-			
+
 			}],
 
-			
+
 			tooltip: {
 				x: {
 					show: true
 				}
 			}
     };
-		var chartTimelineRender =  new ApexCharts(document.querySelector("#chartTimeline"), optionsTimeline);
-		 chartTimelineRender.render();
+		/* var chartTimelineRender =  new ApexCharts(document.querySelector("#chartTimeline"), optionsTimeline);
+		 chartTimelineRender.render(); */
 	}
-	
+
 	var chartBar = function(){
 		var optionsArea = {
           series: [{
             name: "Distance",
 			type: 'line',
-           
+
 			data: [90, 120, 70, 130, 80, 140, 50]
           }
         ],
@@ -170,7 +170,7 @@
 				opacity: 0.1
 			},
         },
-		
+
         dataLabels: {
           enabled: false
         },
@@ -184,7 +184,7 @@
           tooltipHoverFormatter: function(val, opts) {
             return val + ' - ' + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] + ''
           },
-		  
+
         },
         markers: {
 		  strokeWidth: [3],
@@ -204,7 +204,7 @@
 			  fontSize: '12px',
 			   fontFamily: 'Poppins',
 			  fontWeight: 50,
-			  
+
 			},
 		  },
         },
@@ -216,7 +216,7 @@
 			  fontSize: '12px',
 			   fontFamily: 'Poppins',
 			  fontWeight: 50,
-			  
+
 			},
 		  },
 		},
@@ -265,45 +265,45 @@
 				},
 			}
 		 }
-		 ] 
+		 ]
         };
 		var chartArea = new ApexCharts(document.querySelector("#chartBar"), optionsArea);
         chartArea.render();
-		
 
-	}	
+
+	}
 	/* Function ============ */
 		return {
 			init:function(){
 			},
-			
-			
+
+
 			load:function(){
 				btnAware();
 				chartTimeline();
 				chartBar();
 			},
-			
+
 			resize:function(){
-				
+
 			}
 		}
-	
+
 	}();
 
 	jQuery(document).ready(function(){
 	});
-		
+
 	jQuery(window).on('load',function(){
 		setTimeout(function(){
 			dzChartlist.load();
-		}, 1000); 
-		
+		}, 1000);
+
 	});
 
 	jQuery(window).on('resize',function(){
-		
-		
-	});     
+
+
+	});
 
 })(jQuery);

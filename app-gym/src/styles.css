@@ -3,3 +3,14 @@ body {
   font-family: "poppins", sans-serif;
 
 }
+.bg-danger {
+
+  background-color: #D20A0A !important;
+}
+
+.form-control{
+  color : #000 !important;
+}
+input.ng-dirty.ng-invalid {
+  color: red
+}

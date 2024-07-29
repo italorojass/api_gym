@@ -231,13 +231,8 @@
 			border-color:var(--rgba-primary-3);
 		}
 	}
-	.form-check-input:checked ~ .form-check-label::after{
-		/* background-image:url('../images/svg/check.svg'); */
-    background-image:url('../../../images/svg/check.svg');
-	}
-	.form-check-input:checked ~ .form-check-label::before{
-		background:$white;
-	}
+
+
 }
 //Check Switch
 .check-switch{
