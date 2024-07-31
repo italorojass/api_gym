@@ -17,7 +17,7 @@
         _mixin
         _variable
 
-    2. bootstrap 
+    2. bootstrap
         -Here goes all official bootstrap scss files
 
     3. Global/Base
@@ -28581,9 +28581,9 @@ svg text {
   border-radius: 3rem !important;
   border-color: var(--rgba-primary-3);
 }
-.form-switch .form-check-input:checked ~ .form-check-label::after {
+/* .form-switch .form-check-input:checked ~ .form-check-label::after {
   background-image: url("../images/svg/check.svg");
-}
+} */
 .form-switch .form-check-input:checked ~ .form-check-label::before {
   background: #fff;
 }
@@ -29646,7 +29646,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  background: url(../images/svg/cd-arrow.svg) no-repeat 0 0;
+  /* background: url(../images/svg/cd-arrow.svg) no-repeat 0 0; */
 }
 .cd-h-timeline__navigation:hover {
   border-color: #2BC155;
@@ -36945,7 +36945,6 @@ span#counter {
 }
 
 .profile-bx .profile-image {
-  background-image: url("../images/circle.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

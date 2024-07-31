@@ -11,6 +11,10 @@ import { WidgetsComponent } from './components/widgets/widgets.component';
 import { MetricasComponent } from './components/metricas/metricas.component';
 import { IngresoAlumnoComponent } from './components/ingreso-alumno/ingreso-alumno.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AlumnosComponent } from './components/alumnos/alumnos.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { JwtInterceptor } from '../interceptors/jwt.interceptor';
+import { ErrorsInterceptor } from '../interceptors/errors.interceptor';
 
 
 
@@ -22,17 +26,29 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BreadcrumbsComponent,
     WidgetsComponent,
     MetricasComponent,
-    IngresoAlumnoComponent
+    IngresoAlumnoComponent,
+    AlumnosComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers : [
     BreadcrumbService,
-    MenuSidebarService
+    MenuSidebarService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorsInterceptor,
+      multi: true
+    }
   ],
   exports : [
     LayoutComponent,

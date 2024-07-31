@@ -6,6 +6,9 @@ import { RouterModule } from '@angular/router';
 import { InstructoresComponent } from './mantenedor/instructores/instructores.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SharedModule } from '../shared/shared.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from '../interceptors/jwt.interceptor';
+import { ErrorsInterceptor } from '../interceptors/errors.interceptor';
 
 
 @NgModule({
@@ -18,6 +21,9 @@ import { SharedModule } from '../shared/shared.module';
     AdministradorRoutingModule,
     RouterModule,
     SharedModule
+  ],
+  providers: [
+
   ]
 })
 export class AdministradorModule { }

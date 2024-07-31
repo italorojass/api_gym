@@ -8,7 +8,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpInterceptorService } from './interceptors/http-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,11 +23,12 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     SharedModule,
-
+    NgxSpinnerModule.forRoot()
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
-    {provide: APP_BASE_HREF, useValue: '/'}
+    {provide: APP_BASE_HREF, useValue: '/'},
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

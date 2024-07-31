@@ -12,5 +12,5 @@ body {
   color : #000 !important;
 }
 input.ng-dirty.ng-invalid {
-  color: red
+  color: #D20A0A
 }
