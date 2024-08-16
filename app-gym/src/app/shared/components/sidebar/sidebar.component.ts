@@ -6,11 +6,45 @@ import { MenuSidebarService } from '../../services/menu-sidebar.service';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent {
-  openMenu :boolean=false;
+export class SidebarComponent implements OnInit {
+  openMenu: boolean = false;
+  menu: any = [];
 
-  collapseMenu(){
-    this.openMenu=true;
+  ngOnInit(): void {
+    this.menu = [
+      {
+        title: 'Inicio',
+        icon: 'fa-home',
+        url: '/administrador'
+      },
+      {
+        title: 'Alumnos',
+        icon: 'fa-users',
+        url: 'alumnos'
+      },
+      {
+        title: 'Mantenedores',
+        icon: 'fa-cog',
+        openMenu : false,
+        subItem: [
+          {
+            url: '/administrador/mantenedores/instructor',
+          },
+          {
+            url: '/administrador/mantenedores/disciplinas',
+          },
+          {
+            url: '/administrador/mantenedores/horarios',
+          },
+          {
+            url: '/administrador/mantenedores/planes',
+          }
+        ]
+      }
+    ]
+  }
+  collapseMenu() {
+    this.openMenu = true;
   }
 
 }

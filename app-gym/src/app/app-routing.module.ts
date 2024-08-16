@@ -3,6 +3,7 @@ import { AdministradorModule } from './administrador/administrador.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -16,15 +17,18 @@ const routes: Routes = [
   },
   {
     path : 'instructor',
+   // canActivate: [AuthGuard],
     loadChildren: () => import('./profesor/profesor.module').then(m => m.ProfesorModule),
   },
   {
     path : 'administrador',
+    //canActivate: [AuthGuard],
     loadChildren: () => import('./administrador/administrador.module').then(m => m.AdministradorModule),
 
   },
   {
     path : 'alumno',
+    //canActivate: [AuthGuard],
     loadChildren: () => import('./alumnno/alumnno.module').then(m => m.AlumnnoModule),
   },
   {

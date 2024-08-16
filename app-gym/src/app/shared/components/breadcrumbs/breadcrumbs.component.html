@@ -1,9 +1,10 @@
 <div class="page-titles">
   <ol class="breadcrumb">
-    <li *ngFor="let breadcrumb of breadcrumbs$ | async;let i=index"
-     class="breadcrumb-item active"  >
+    <li *ngFor="let breadcrumb of breadcrumbs$ | async;let last = last"
+     class="breadcrumb-item "  [ngClass]="{'active': last}" >
+     <a  [routerLink]="breadcrumb.url"  *ngIf="last;else nourl">{{ breadcrumb.label }}</a>
+     <ng-template #nourl>{{ breadcrumb.label }}</ng-template>
 
-      <a [routerLink]="breadcrumb.url" *ngIf="breadcrumb.label">{{ breadcrumb.label }}</a>
     </li>
 
   </ol>

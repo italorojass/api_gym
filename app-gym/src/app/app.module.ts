@@ -11,6 +11,10 @@ import { SharedModule } from './shared/shared.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptorService } from './interceptors/http-interceptor.service';
+import { ToastrModule } from 'ngx-toastr';
+import { provideAnimations } from '@angular/platform-browser/animations';
+
+import { provideToastr } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,12 +27,15 @@ import { HttpInterceptorService } from './interceptors/http-interceptor.service'
     ReactiveFormsModule,
     BrowserAnimationsModule,
     SharedModule,
-    NgxSpinnerModule.forRoot()
+    NgxSpinnerModule.forRoot(),
+    ToastrModule.forRoot(),
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     {provide: APP_BASE_HREF, useValue: '/'},
-    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },
+    provideAnimations(), // required animations providers
+    provideToastr(),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

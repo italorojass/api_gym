@@ -1,110 +1,32 @@
 
-<div class="col-xl-4 col-lg-12 col-sm-12">
-  <div class="card overflow-hidden">
-    <div class="text-center p-5 overlay-box" style="background-image: url(assets/images/big/img5.jpg);">
-      <img src="images/profile/profile.png" width="100" class="img-fluid rounded-circle" alt="">
-      <h3 class="mt-3 mb-0 text-white">Marcos Santander</h3>
-    </div>
-    <div class="card-body">
-      <div class="row text-center">
-        <div class="col-6">
-          <div class="bgl-primary rounded p-3">
-            <h4 class="mb-0">Female</h4>
-            <small>Client Gender</small>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="bgl-primary rounded p-3">
-            <h4 class="mb-0">Age: 24</h4>
-            <small>Years Old</small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card-footer mt-0">
-      <button class="btn btn-primary btn-lg btn-block">Ver perfil</button>
-    </div>
-  </div>
-</div>
-<div class="col-xl-4 col-lg-12 col-sm-12">
-  <div class="card overflow-hidden">
-    <div class="text-center p-5 overlay-box" style="background-image: url(assets/images/big/img5.jpg);">
-      <img src="images/profile/profile.png" width="100" class="img-fluid rounded-circle" alt="">
-      <h3 class="mt-3 mb-0 text-white">Hector Tobar</h3>
-    </div>
-    <div class="card-body">
-      <div class="row text-center">
-        <div class="col-6">
-          <div class="bgl-primary rounded p-3">
-            <h4 class="mb-0">Female</h4>
-            <small>Client Gender</small>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="bgl-primary rounded p-3">
-            <h4 class="mb-0">Age: 24</h4>
-            <small>Years Old</small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card-footer mt-0">
-      <button class="btn btn-primary btn-lg btn-block">Ver perfil</button>
-    </div>
-  </div>
-</div>
-<div class="col-xl-4 col-lg-12 col-sm-12">
-  <div class="card overflow-hidden">
-    <div class="text-center p-5 overlay-box" style="background-image: url(assets/images/big/img5.jpg);">
-      <img src="images/profile/profile.png" width="100" class="img-fluid rounded-circle" alt="">
-      <h3 class="mt-3 mb-0 text-white">Jose Luis Jaña</h3>
-    </div>
-    <div class="card-body">
-      <div class="row text-center">
-        <div class="col-6">
-          <div class="bgl-primary rounded p-3">
-            <h4 class="mb-0">Female</h4>
-            <small>Client Gender</small>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="bgl-primary rounded p-3">
-            <h4 class="mb-0">Age: 24</h4>
-            <small>Years Old</small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card-footer mt-0">
-      <button class="btn btn-primary btn-lg btn-block">Ver perfil</button>
-    </div>
-  </div>
-</div>
 
-<div class="col-xl-4 col-lg-12 col-sm-12">
-  <div class="card overflow-hidden">
-    <div class="text-center p-5 overlay-box" style="background-image: url(assets/images/big/img5.jpg);">
-      <img src="images/profile/profile.png" width="100" class="img-fluid rounded-circle" alt="">
-      <h3 class="mt-3 mb-0 text-white">Alvaro Borja</h3>
-    </div>
-    <div class="card-body">
-      <div class="row text-center">
-        <div class="col-6">
-          <div class="bgl-primary rounded p-3">
-            <h4 class="mb-0">Female</h4>
-            <small>Client Gender</small>
+<div class="row">
+  <div class="col-xl-6 col-lg-4 col-sm-12" *ngFor="let item of instructores">
+    <div class="card overflow-hidden">
+      <div class="text-center p-5 overlay-box" style="background-image: url(assets/images/big/img5.jpg);">
+        <img src="images/profile/profile.png" width="100" class="img-fluid rounded-circle" alt="">
+        <h3 class="mt-3 mb-0 text-white">{{item.Name}}</h3>
+      </div>
+      <div class="card-body">
+        <div class="row text-center">
+          <div class="col-6">
+            <div class="bgl-primary rounded p-3">
+              <h4 class="mb-0">{{item.Email}}</h4>
+
+            </div>
           </div>
-        </div>
-        <div class="col-6">
-          <div class="bgl-primary rounded p-3">
-            <h4 class="mb-0">Age: 24</h4>
-            <small>Years Old</small>
+          <div class="col-6">
+            <div class="bgl-primary rounded p-3">
+              <h4 class="mb-0">+56 9 {{item.Phone}}</h4>
+
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="card-footer mt-0">
-      <button class="btn btn-primary btn-lg btn-block">Ver perfil</button>
+   <!--    <div class="card-footer mt-0">
+        <button class="btn btn-primary btn-lg btn-block">Ver perfil</button>
+      </div> -->
     </div>
   </div>
+
 </div>

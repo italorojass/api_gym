@@ -9,21 +9,38 @@ import { SharedModule } from '../shared/shared.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from '../interceptors/jwt.interceptor';
 import { ErrorsInterceptor } from '../interceptors/errors.interceptor';
+import { HorariosComponent } from './mantenedor/horarios/horarios.component';
+import { MantenedorComponent } from './mantenedor/mantenedor.component';
+import { DisciplinasComponent } from './mantenedor/disciplinas/disciplinas.component';
+import { PlanesComponent } from './mantenedor/planes/planes.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 @NgModule({
   declarations: [
     InstructoresComponent,
-    InicioComponent
+    InicioComponent,
+    HorariosComponent,
+    MantenedorComponent,
+    DisciplinasComponent,
+    PlanesComponent
   ],
   imports: [
     CommonModule,
     AdministradorRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    NgSelectModule
   ],
   providers: [
-
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
   ]
 })
 export class AdministradorModule { }

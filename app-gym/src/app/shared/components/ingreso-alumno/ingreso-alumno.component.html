@@ -6,61 +6,84 @@
       </div>
       <div class="card-body">
         <form [formGroup]="formNuevoAlumno" (ngSubmit)="submit()">
-          <div  class="form-wizard order-create sw sw-theme-default sw-justified">
+          <div class="form-wizard order-create sw sw-theme-default sw-justified">
 
-          <div class="tab-content" style="height: 344px;">
-            <div id="wizard_Service" class="tab-pane" role="tabpanel" style="display: block;">
-              <div class="row">
-                <div class="col-lg-6 mb-2">
-                  <div class="form-group">
-                    <label class="text-label">Nombre<span class="required">*</span></label>
-                    <input type="text" name="firstName" class="form-control" placeholder="Parsley" required="" formControlName="nombre">
+            <div class="tab-content" style="height: 344px;">
+              <div id="wizard_Service" class="tab-pane" role="tabpanel" style="display: block;">
+                <div class="row">
+                  <div class="col-lg-6 mb-2">
+                    <div class="form-group">
+                      <label class="text-label">Nombre<span class="required">*</span></label>
+                      <input type="text" name="firstName" class="form-control" placeholder="Tony" required=""
+                        formControlName="nombre">
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-6 mb-2">
-                  <div class="form-group">
-                    <label class="text-label">Apellido<span class="required">*</span></label>
-                    <input type="text" name="lastName" class="form-control" placeholder="Montana" required="" formControlName="apellido">
+                  <div class="col-lg-6 mb-2">
+                    <div class="form-group">
+                      <label class="text-label">Apellido<span class="required">*</span></label>
+                      <input type="text" name="lastName" class="form-control" placeholder="Montana" required=""
+                        formControlName="apellido">
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-6 mb-2">
-                  <div class="form-group">
-                    <label class="text-label">Email<span class="required">*</span></label>
-                    <input type="email" class="form-control" id="inputGroupPrepend2"
-                      aria-describedby="inputGroupPrepend2" placeholder="example@example.com.com" required="" formControlName="email">
+                  <div class="col-lg-6 mb-2">
+                    <div class="form-group">
+                      <label class="text-label">Email<span class="required">*</span></label>
+                      <input type="email" class="form-control" id="inputGroupPrepend2"
+                        aria-describedby="inputGroupPrepend2" placeholder="ejemplo@ejemplo.com" required=""
+                        formControlName="email">
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-6 mb-2">
-                  <div class="form-group">
-                    <label class="text-label">Numero de contacto<span class="required">*</span></label>
-                    <input type="number" name="phoneNumber" class="form-control" placeholder="(+1)408-657-9007" formControlName="telefono"
-                      required="">
+                  <div class="col-lg-6 mb-2">
+                    <div class="form-group">
+                      <label class="text-label">Numero de contacto<span class="required">*</span></label>
+                      <input type="number" name="phoneNumber" class="form-control" placeholder="(+56) 9 123 4567"
+                        formControlName="telefono" required="">
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-6 mb-3">
-                  <div class="form-group">
-                    <label class="text-label">Disciplina<span class="required">*</span></label>
-                    <input type="text" name="place" class="form-control" required="" formControlName="disciplina">
+                  <div class="col-lg-6 mb-3">
+                    <div class="form-group">
+                      <label class="text-label">Disciplina<span class="required">*</span></label>
+                      <ng-select [items]="disciplinas"
+                      bindLabel="DisciplineName"
+                      placeholder="Seleccionar disciplinas"
+                      bindValue="DisciplineID"
+                      (change)="getHorarios()"
+                      [multiple]="true"
+                        formControlName="disciplina" [(ngModel)]="selectedDisciplina">
+                      </ng-select>
+
+
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-6 mb-3">
-                  <div class="form-group">
-                    <label class="text-label">Horario<span class="required">*</span></label>
-                    <input type="text" name="place" class="form-control" required="" formControlName="plan">
+                  <div class="col-lg-6 mb-3" *ngIf="horarios.length >0">
+                    <div class="form-group">
+                      <label class="text-label">Horario<span class="required">*</span></label>
+                      <ng-select [items]="horarios"
+                      placeholder="Seleccionar horario"
+                      bindLabel="displayName"
+                      bindValue="TimeID"
+                      [multiple]="true"
+                        formControlName="plan" [(ngModel)]="selectedHorario">
+                      </ng-select>
+
+
+                    </div>
                   </div>
                 </div>
               </div>
+
             </div>
 
-          </div>
-          <div class="toolbar toolbar-bottom" role="toolbar" style="text-align: right;">
+            <div class="toolbar toolbar-bottom mt-2" role="toolbar" style="text-align: right;">
 
-            <button class="btn btn-success btn-block" type="submit" [disabled]="!formNuevoAlumno.valid">Inscribir</button>
+              <button class="btn btn-success btn-block" type="submit"
+                [disabled]="!formNuevoAlumno.valid">Inscribir</button>
+            </div>
           </div>
-        </div>
         </form>
 
       </div>
     </div>
   </div>
 </div>
+<app-alumnos [insertaAlumno]="saveAlumno"></app-alumnos>

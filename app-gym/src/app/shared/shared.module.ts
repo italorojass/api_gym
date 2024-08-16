@@ -1,3 +1,4 @@
+import { NgSelectModule } from '@ng-select/ng-select';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -15,7 +16,7 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from '../interceptors/jwt.interceptor';
 import { ErrorsInterceptor } from '../interceptors/errors.interceptor';
-
+import { MantenedoresService } from './services/mantenedores.service';
 
 
 @NgModule({
@@ -34,11 +35,14 @@ import { ErrorsInterceptor } from '../interceptors/errors.interceptor';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgSelectModule
+
   ],
   providers : [
     BreadcrumbService,
     MenuSidebarService,
+    MantenedoresService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
@@ -57,7 +61,8 @@ import { ErrorsInterceptor } from '../interceptors/errors.interceptor';
     BreadcrumbsComponent,
     WidgetsComponent,
     MetricasComponent,
-    IngresoAlumnoComponent
+    IngresoAlumnoComponent,
+    AlumnosComponent
   ]
 })
 export class SharedModule { }
