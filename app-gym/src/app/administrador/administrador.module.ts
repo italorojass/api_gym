@@ -15,6 +15,7 @@ import { DisciplinasComponent } from './mantenedor/disciplinas/disciplinas.compo
 import { PlanesComponent } from './mantenedor/planes/planes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { FlatpickrModule } from 'angularx-flatpickr';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ReactiveFormsModule,
     RouterModule,
     SharedModule,
-    NgSelectModule
+    NgSelectModule,
+    FlatpickrModule
   ],
   providers: [
     {

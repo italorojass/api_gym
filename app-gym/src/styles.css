@@ -14,6 +14,10 @@ body {
 .form-control{
   color : #000 !important;
 }
-input.ng-dirty.ng-invalid {
+input.ng-dirty.ng-invalid.ng-touched {
   color: #D20A0A
+}
+
+input.ng-invalid.ng-touched {
+  border-color: #D20A0A;
 }

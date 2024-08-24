@@ -10,38 +10,18 @@
       <div class="card-body">
         <form [formGroup]="formDisciplina" (ngSubmit)="submit()">
           <div class="row">
+
             <div class="col-lg-3 mb-2">
               <div class="form-group">
                 <label class="text-label">Disciplina<span class="required">*</span></label>
                 <input type="text" name="firstName" class="form-control form-control-sm" placeholder="Ejemplo: Boxeo" required=""
-                  formControlName="nombreDisciplina">
-              </div>
-            </div>
-
-            <div class="col-lg-3 mb-3" >
-              <div class="form-group">
-                <label class="text-label">Días<span class="required">*</span></label>
-                <ng-select [items]="dias"
-                placeholder="Seleccionar días"
-                bindLabel="DayName"
-                bindValue="DayID"
-                [multiple]="true"
-                  formControlName="dias" [(ngModel)]="selectedDias">
-                </ng-select>
-
-
+                  formControlName="disciplina">
               </div>
             </div>
             <div class="col-lg-3 mb-3" >
               <div class="form-group">
-                <label class="text-label">Horario<span class="required">*</span></label>
-                <ng-select [items]="horarios"
-                placeholder="Seleccionar horarios"
-                bindLabel="TimeValue"
-                bindValue="TimeID"
-                [multiple]="true"
-                  formControlName="horario" [(ngModel)]="selectedHorario">
-                </ng-select>
+                <label class="text-label">Descripción</label>
+                <input type="text" class="form-control form-control-sm" name="descripcion" formControlName="descripcion">
 
 
               </div>
@@ -51,15 +31,45 @@
                 <label class="text-label">Instructor<span class="required">*</span></label>
                 <ng-select [items]="instructores"
                 placeholder="Seleccionar instructor"
-                bindLabel="Name"
-                bindValue="InstructorID"
+                bindLabel="nombreCompleto"
+                bindValue="id"
                 [multiple]="true"
-                  formControlName="instructor" [(ngModel)]="selectedInstructor">
+                  formControlName="instructores" [(ngModel)]="selectedInstructor">
                 </ng-select>
 
 
               </div>
             </div>
+         <!--    <div class="col-lg-3 mb-3" >
+              <div class="form-group">
+                <label class="text-label">Días<span class="required">*</span></label>
+                <ng-select [items]="dias"
+                placeholder="Seleccionar días"
+                bindLabel="nombre"
+                bindValue="id"
+                [multiple]="true"
+                  formControlName="dias" [(ngModel)]="selectedDias">
+                </ng-select>
+
+
+              </div>
+            </div> -->
+
+            <div class="col-lg-3 mb-3" >
+              <div class="form-group">
+                <label class="text-label">Horario<span class="required">*</span></label>
+                <ng-select [items]="horarios"
+                placeholder="Seleccionar horarios"
+                bindLabel="TimeValue"
+                bindValue="TimeID"
+                [multiple]="true"
+                  formControlName="horarios" [(ngModel)]="selectedHorario">
+                </ng-select>
+
+
+              </div>
+            </div>
+
           </div>
           <div class="row">
             <div class="col-12">
@@ -67,21 +77,7 @@
               [disabled]="!formDisciplina.valid">Guardar</button>
             </div>
           </div>
-          <!-- <div class="form-wizard order-create sw sw-theme-default sw-justified">
 
-            <div class="tab-content" style="height: 344px;">
-              <div id="wizard_Service" class="tab-pane" role="tabpanel" style="display: block;">
-
-              </div>
-
-            </div>
-
-            <div class="toolbar toolbar-bottom mt-2" role="toolbar" style="text-align: right;">
-
-              <button class="btn btn-success btn-block" type="submit"
-                [disabled]="!formDisciplina.valid">Guardar</button>
-            </div>
-          </div> -->
         </form>
 
       </div>

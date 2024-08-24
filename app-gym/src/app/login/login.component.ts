@@ -29,13 +29,13 @@ export class LoginComponent {
       console.log(data);
 
       switch(data.role){
-        case 1 :
+        case '1' :
          this._router.navigate(['/administrador']);
         break;
-        case 2 :
+        case '2' :
          this._router.navigate(['/instructor']);
         break;
-        case 3 :
+        case '3' :
         this._router.navigate(['/alumno']);
         break;
 

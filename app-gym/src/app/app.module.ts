@@ -13,6 +13,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptorService } from './interceptors/http-interceptor.service';
 import { ToastrModule } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { FlatpickrModule } from 'angularx-flatpickr';
 
 import { provideToastr } from 'ngx-toastr';
 @NgModule({
@@ -29,6 +30,7 @@ import { provideToastr } from 'ngx-toastr';
     SharedModule,
     NgxSpinnerModule.forRoot(),
     ToastrModule.forRoot(),
+    FlatpickrModule.forRoot()
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},

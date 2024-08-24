@@ -30,7 +30,8 @@
               "src/assets/css/style.css",
               "src/assets/vendor/owl-carousel/owl.carousel.css",
               "src/styles.css",
-              "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+              "node_modules/flatpickr/dist/flatpickr.css"
             ],
             "scripts": [
               "src/assets/vendor/global/global.min.js",

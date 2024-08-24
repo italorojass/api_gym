@@ -21,28 +21,50 @@ export class DisciplinasComponent implements OnInit{
   selectedDias : any;
   selectedInstructor : any;
   formDisciplina = this.fb.group({
-    nombreDisciplina :['',Validators.required],
-    dias : ['',Validators.required],
-    horario : ['',Validators.required],
-    instructor : ['',Validators.required]
+    disciplina :['',Validators.required],
+    descripcion : [''],
+    //dias : ['',Validators.required],
+    horarios : ['',Validators.required],
+    instructores : ['',Validators.required]
   })
   ngOnInit(): void {
     this.getDisciplinas();
     this.getDias();
-    this.getHorarios();
+    //this.getHorarios();
     this.getInstructores();
   }
 
   submit(){
-
+    console.log(this.formDisciplina.value);
+   /*  this.disciplinasSV.createDisciplina(this.formDisciplina.value).subscribe(r=>{
+      this.getDisciplinas();
+    }) */
   }
 
   disciplinas :any = [];
   getDisciplinas(){
-    this.disciplinasSV.getDisciplinas().subscribe((r:any)=>{
-      //console.log(r);
-      this.disciplinas = r;
-      console.log(this.disciplinas);
+    this.disciplinasSV.getDisciplinas2().subscribe((r:any)=>{
+      console.log('response disciplinas',r);
+      this.disciplinas = r
+
+      /* .filter((value:any, index:any, self:any) =>
+        index === self.findIndex((t:any) => (
+            t.Day === value.Day && t.Time === value.Time
+        ))
+      ); */
+
+      /* console.log(this.disciplinas);
+      const horarios= this.disciplinas.map((value:any)=>{
+        let horarios = value.Schedules.filter((value:any, index:any, self:any) =>
+          index === self.findIndex((t:any) => (
+              t.Day === value.Day && t.Time === value.Time
+          ))
+        );
+
+        return horarios;
+
+      })
+      console.log(horarios); */
     })
   }
 
@@ -63,8 +85,14 @@ export class DisciplinasComponent implements OnInit{
 
   instructores :any= [];
   getInstructores(){
-    this.mansv.getInstructores().subscribe(r=>{
-      this.instructores= r;
+    this.mansv.getInstructores().subscribe((r:any)=>{
+      this.instructores= r.map((x:any)=>{
+        return {
+         ...x,
+         nombreCompleto : `${x.nombre} ${x.apellido}`
+        }
+      });
+      console.log(this.instructores);
     })
   }
 

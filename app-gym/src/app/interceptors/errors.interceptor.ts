@@ -27,9 +27,22 @@ export class ErrorsInterceptor implements HttpInterceptor {
 
           return throwError(()=>console.error(error));
         }
+
+        if(error.status == 401){
+          Swal.fire({
+            title: 'Token inválido',
+            text: 'Debes volver a iniciar sesión',
+            icon: 'info',
+            confirmButtonText: 'Ok'
+          });
+
+          this.router.navigate(['/login']);
+          return throwError(()=>console.error(error));
+        }
+
         Swal.fire({
           title: error.error.message ? error.error.message : error.error,
-          text: '',
+          text: error.error.error.message,
           icon: 'error',
           confirmButtonText: 'Continuar'
         })

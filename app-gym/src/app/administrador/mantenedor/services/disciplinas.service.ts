@@ -15,7 +15,9 @@ export class DisciplinasService {
     return this.httpClient.get<any[]>(`${this.HOST}/disciplinasMantenedor`);
   }
 
-
+  getDisciplinas2(): Observable<any[]> {
+    return this.httpClient.get<any[]>(`${this.HOST}/disciplinas`);
+  }
 
   createDisciplina(data: any): Observable<any> {
     return this.httpClient.post<any>(`${this.HOST}/disciplinas`, data);

@@ -1,1 +1,129 @@
-<p>horarios works!</p>
+<div class="row">
+  <div class="col-xl-12 col-xxl-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Ingresar nuevo horario</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="formHorario" (ngSubmit)="submit()">
+          <div class="row">
+
+            <div class="col-lg-6 mb-3" >
+              <div class="form-group">
+                <label class="text-label">Días<span class="required">*</span></label>
+                <ng-select [items]="dias"
+                placeholder="Seleccionar días"
+                bindLabel="nombre"
+                bindValue="id"
+                [multiple]="true"
+                  formControlName="dias" [(ngModel)]="selectedDias" >
+                </ng-select>
+
+
+
+              </div>
+            </div>
+            <div class="col-lg-6 mb-3" >
+              <div class="form-group">
+                <label class="text-label">Horario<span class="required">*</span></label>
+
+                <input
+                type="text"
+                class="form-control form-control-sm"
+                placeholder="Ingresa la hora"
+                mwlFlatpickr
+                [(ngModel)]="selectedHorario"
+                [mode]="'multiple'"
+                formControlName="horas"
+                [dateFormat]="'H:i'"
+                [noCalendar]="true"
+                [enableTime]="true"
+              />
+
+
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <button class="btn btn-primary btn-block" type="submit"
+              [disabled]="!formHorario.valid">Guardar</button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Disciplinas de la academia</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-responsive-lg table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Dias</th>
+                <th>Horas</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+           <!--  <tbody *ngIf="disciplinas.length > 0;else sinData">
+              <tr *ngFor="let item of disciplinas">
+
+                <td>{{item.DisciplineName}}</td>
+                <td>  <span class="badge light badge-light" *ngFor="let subitem of item.Schedules">{{subitem.Day}}</span></td>
+                <td>
+
+                  <span class="badge light badge-light" *ngFor="let subitem of item.Schedules">{{subitem.Time}}</span>
+                </td>
+
+               <td >
+
+                 <span class="badge light badge-primary" *ngFor="let subitem of item.Instructors">{{subitem.InstructorName}}</span>
+
+               </td>
+                <td>
+                  <div class="dropdown">
+                    <button type="button" class="btn btn-success light sharp" data-bs-toggle="dropdown">
+                      <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <rect x="0" y="0" width="24" height="24" />
+                          <circle fill="#000000" cx="5" cy="12" r="2" />
+                          <circle fill="#000000" cx="12" cy="12" r="2" />
+                          <circle fill="#000000" cx="19" cy="12" r="2" />
+                        </g>
+                      </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Editar</a>
+                      <a class="dropdown-item" href="#">Eliminar</a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+
+            <ng-template #sinData>
+              <tbody>
+                <tr>
+                  <td colspan="7" align="center">Sin datos</td>
+                </tr>
+              </tbody>
+            </ng-template> -->
+
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
