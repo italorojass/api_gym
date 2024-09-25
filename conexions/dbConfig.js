@@ -18,7 +18,7 @@ const config = {
   port : '3306',// Reemplaza con tu host de MySQL
   user: 'italo',  // Reemplaza con tu usuario de MySQL
   password: '1313',  // Reemplaza con tu contraseña de MySQL
-  database: 'gym_ams'  // El nombre de la base de datos
+  database: 'ams_gym'  // El nombre de la base de datos
 };
 
 module.exports = config;
