@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const adminController = require('../controllers/adminController');
 const instructorController = require('../controllers/instructorController');
-const studentController = require('../controllers/studentController');
+const disciplinaController = require('../controllers/disciplinaController');
 const authController = require('../controllers/authController');
 const mantenedorController = require('../controllers/mantenedorController');
 const dashboardController = require('../controllers/dashboardController');
@@ -31,8 +30,6 @@ router.delete('/disciplinas/:id', authenticate, isAdmin, disciplinaController.de
 
 
 router.get('/dias', authenticate, mantenedorController.getDias);
-router.get('/times', authenticate, mantenedorController.getTimes);
-
 router.get('/estadisticas', authenticate, dashboardController.getEstadisticasPorDisciplina);
 
 
