@@ -127,19 +127,6 @@ const updatePlan = async (req,res) =>{
     res.status(500).json({ message: 'Error al actualizar plan', error });
   }
 }
-// Similarmente se implementan getPlanes, updatePlan, deletePlan
-
-// Mantenedor de Instructores
-const createInstructor = async (req, res) => {
-  const { Name } = req.body;
-  const query = `INSERT INTO Instructors (Name) VALUES (?);`;
-  try {
-    await executeQuery(query, [Name]);
-    res.status(201).json({ message: 'Instructor creado exitosamente' });
-  } catch (error) {
-    res.status(500).json({ message: 'Error al crear instructor', error });
-  }
-};
 
 // Similarmente se implementan getInstructores, updateInstructor, deleteInstructor
 
@@ -176,9 +163,9 @@ const createHorario = async (req, res) => {
 
 
 const getDias = async (req, res) => {
-  const query = `SELECT * FROM days;`;
+  const query = `CALL obtener_dias_ordenados();`;
   try {
-    const result = await executeQuery(query);
+    const [result] = await executeQuery(query);
     res.status(201).json(result);
   } catch (error) {
     res.status(500).json({ message: 'Error al obtener días', error });
