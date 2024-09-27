@@ -19,7 +19,7 @@ const authenticate = (req, res, next) => {
 
 // Middleware para verificar si el usuario es administrador
 const isAdmin = (req, res, next) => {
-  if (req.user && req.user.role === 1) {
+  if (req.user && req.user.role === '1') {
     next();
   } else {
     res.status(403).json({ message: 'Acceso denegado: Solo los administradores pueden realizar esta acción.' });

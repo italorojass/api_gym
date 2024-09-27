@@ -1,5 +1,4 @@
 const { executeQuery } = require('../conexions/database');
-const sql = require('mssql');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
@@ -13,7 +12,12 @@ const login = async (req, res) => {
     return res.status(400).json({ message: 'Username y password son requeridos' });
   }
 
-  const query = 'SELECT Username,PasswordHash,Email,RoleID,Phone,Photo FROM Users WHERE Email = ?';
+  const query = `SELECT
+   nombre_usuario,
+   contrasena,
+   foto,
+   rol
+   FROM usuarios WHERE nombre_usuario = ?`;
   const params = [username];
 
   try {
@@ -25,13 +29,16 @@ const login = async (req, res) => {
   
     // Verificar la contraseña
     const user = users[0];
-    if(user.PasswordHash != password){
+    if(user.contrasena != password){
       return res.status(400).json({ message: 'Contraseña incorrecta' });
     }
 
     // Generar el token JWT
     const token = jwt.sign(
-      { id: user.UserID, role: user.RoleID , phone : user.Phone, photo : user.Photo},
+      { 
+      
+      role: user.rol , 
+      photo : user.foto},
       secretKey,
       { expiresIn: '12h' }
     );

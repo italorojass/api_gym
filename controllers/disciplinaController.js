@@ -55,7 +55,7 @@ const getDisciplinas = async (req, res) => {
   }
   
 
-  const agregarDisciplina = async (req, res) => {
+  async function agregarDisciplina(req, res) {
     const { disciplina, descripcion, dias, horarios, instructores } = req.body;
     console.log(req.body);
     try {

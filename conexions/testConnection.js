@@ -1,7 +1,7 @@
 const { executeQuery } = require('./database');
 
 async function testConnection() {
-  const query = 'SELECT * FROM users';
+  const query = 'SELECT * FROM usuario';
   try {
     const result = await executeQuery(query);
     console.log('Conexión exitosa. Resultados:', result);

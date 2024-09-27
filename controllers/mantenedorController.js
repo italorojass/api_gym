@@ -127,6 +127,9 @@ const updatePlan = async (req,res) =>{
     res.status(500).json({ message: 'Error al actualizar plan', error });
   }
 }
+// Similarmente se implementan getPlanes, updatePlan, deletePlan
+
+
 
 // Similarmente se implementan getInstructores, updateInstructor, deleteInstructor
 
@@ -163,7 +166,7 @@ const createHorario = async (req, res) => {
 
 
 const getDias = async (req, res) => {
-  const query = `CALL obtener_dias_ordenados();`;
+  const query = `call obtener_dias_ordenados()`;
   try {
     const [result] = await executeQuery(query);
     res.status(201).json(result);

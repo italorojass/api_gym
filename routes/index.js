@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const adminController = require('../controllers/adminController');
 const instructorController = require('../controllers/instructorController');
-const disciplinaController = require('../controllers/disciplinaController');
+const studentController = require('../controllers/studentController');
 const authController = require('../controllers/authController');
 const mantenedorController = require('../controllers/mantenedorController');
 const dashboardController = require('../controllers/dashboardController');
+const disciplinaController = require('../controllers/disciplinaController');
 
 const { authenticate, authorize,isAdmin  } = require('../middleware/authMiddleware');
 
@@ -30,12 +32,15 @@ router.delete('/disciplinas/:id', authenticate, isAdmin, disciplinaController.de
 
 
 router.get('/dias', authenticate, mantenedorController.getDias);
+//router.get('/times', authenticate, mantenedorController.getTimes);
+
 router.get('/estadisticas', authenticate, dashboardController.getEstadisticasPorDisciplina);
 
 
 // Rutas para Instructores (solo admin puede crear, actualizar, eliminar)
-//router.post('/instructores', authenticate, isAdmin, mantenedorController.createInstructor);
-router.get('/instructores', authenticate, instructorController.getInstructores);
+router.post('/instructores', authenticate, isAdmin, instructorController.postInstructors);
+router.get('/instructores', authenticate, instructorController.getInstructores2);
+
 //router.put('/instructores/:id', authenticate, isAdmin, mantenedorController.updateInstructor);
 //router.delete('/instructores/:id', authenticate, isAdmin, mantenedorController.deleteInstructor);
 

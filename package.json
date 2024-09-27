@@ -22,5 +22,8 @@
     "msnodesqlv8": "4.2.1",
     "mssql": "11.0.1",
     "mysql2": "3.11.0"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "0.5.8"
   }
 }

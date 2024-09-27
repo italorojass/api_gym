@@ -21,4 +21,12 @@ const config = {
   database: 'ams_gym'  // El nombre de la base de datos
 };
 
-module.exports = config;
+
+const configRailway = { 
+  host: 'autorack.proxy.rlwy.net',
+  user: 'root',
+  password: 'VAVbzPJxeHHOucGOOzoNmfPCWRTkSmoa',
+  database: 'ams_gym',
+  port: 12068
+}
+module.exports = configRailway;
