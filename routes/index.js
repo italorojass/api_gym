@@ -20,6 +20,7 @@ router.post('/register', authController.register);
 router.get('/keys/disciplinas',authenticate,disciplinaController.getDisciplinas);
 router.get('/keys/comunas/',authenticate,mantenedorController.getComunas);
 //Globales
+router.put('/alumno', authenticate, mantenedorController.updateAlumno);
 router.post('/alumno', authenticate, mantenedorController.postAlumnoNuevo);
 router.get('/alumno', authenticate, mantenedorController.getAlumnos);
 router.delete('/alumno/:id', authenticate, mantenedorController.deleteAlumno);

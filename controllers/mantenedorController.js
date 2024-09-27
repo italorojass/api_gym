@@ -77,6 +77,30 @@ const getAlumnos = async (req, res) => {
   }
 };
 
+const updateAlumno = async (req, res) => {
+  // Extract the necessary fields from the request body
+  const { id, contacto_emergencia, email, observaciones } = req.body;
+
+  // Define the query to call the stored procedure
+  const query = `CALL actualizar_alumno(?, ?, ?, ?)`;
+
+  try {
+    // Execute the stored procedure with the provided parameters
+    const [results] = await executeQuery(query, [id, contacto_emergencia, email, observaciones]);
+
+    // Send back the success message returned by the stored procedure
+    res.status(200).json({
+      message: results[0].resultado // The result message from the stored procedure
+    });
+  } catch (error) {
+    // If any error occurs, send an error response
+    res.status(500).json({
+      message: 'Error al actualizar el alumno',
+      error: error.message
+    });
+  }
+};
+
 
 
 const getComunas = async (req, res) => {
@@ -222,6 +246,7 @@ module.exports = {
   updatePlan,
   //planes
   postAlumnoNuevo,
+  updateAlumno,
   getAlumnos,
   createHorario,
 };
