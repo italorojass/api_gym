@@ -21,5 +21,5 @@ app.use(bodyParser.urlencoded({
 var server = http.createServer(app);
 //server.listen(port);
 server.listen(port, () => {
-  console.log(`Servidor funcionando en http://localhost:${port}`);
+  console.log(`Servidor funcionando en el puerto: ${port}`);
 });
