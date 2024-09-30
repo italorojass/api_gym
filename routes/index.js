@@ -15,7 +15,7 @@ const { authenticate, authorize,isAdmin  } = require('../middleware/authMiddlewa
 // Rutas de autenticación
 router.post('/login', authController.login);
 router.post('/register', authController.register);
-
+router.get('/hl',mantenedorController.healtCheck);
 // Rutas KEYS Mantendor
 router.get('/keys/disciplinas',authenticate,disciplinaController.getDisciplinas);
 router.get('/keys/comunas/',authenticate,mantenedorController.getComunas);

@@ -233,6 +233,10 @@ const deleteAlumno = async (req,res) =>{
 }
 
 
+const healtCheck =async(req,res)=>{
+  res.status(201).json({ message: 'Servidor OK' });
+}
+
 module.exports = {
   deleteAlumno,
   getComunas,
@@ -249,4 +253,5 @@ module.exports = {
   updateAlumno,
   getAlumnos,
   createHorario,
+  healtCheck
 };
