@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
  
  app.use(bodyParser.json());
  app.use('/api', routes);
- app.use('healtcheck','Servidor funcionando')
+ app.use('/healtcheck','Servidor funcionando')
 
 // Server creation
 var server = http.createServer(app);
